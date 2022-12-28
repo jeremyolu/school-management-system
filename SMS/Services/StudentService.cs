@@ -42,6 +42,11 @@ namespace SMS.Services
             };
         }
 
+        public Student GetStudent(int studentId)
+        {
+            return GetStudents().FirstOrDefault(s => s.Id == studentId);
+        }
+
         private List<StudentInfo> GetStudentInfoList()
         {
             return new List<StudentInfo>

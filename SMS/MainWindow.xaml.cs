@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Documents;
+using System.Windows.Input;
 using System.Windows.Media;
 
 namespace SMS
@@ -25,7 +26,7 @@ namespace SMS
         {
             studentDataGrid.ItemsSource = _studentService.GetStudentList();
             studentDataGrid.IsReadOnly = true;
-            userLbl.Content = $"User: {TeacherData.Name + " " + TeacherData.Surname}";
+            //userLbl.Content = $"User: {TeacherData.Name + " " + TeacherData.Surname}";
         }
 
         private void SetData(StudentViewModel selectedItem)
@@ -57,6 +58,26 @@ namespace SMS
         {
             studentNotesTxtBox.IsReadOnly = false;
             studentNotesTxtBox.Background = new SolidColorBrush(Colors.White);
+        }
+
+        private void studentDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
+        {
+            var selectedItem = (StudentViewModel)studentDataGrid.SelectedItem;
+
+            var student = _studentService.GetStudent(selectedItem.StudentId);
+
+            if (student != null)
+            {
+                OpenStudentWindow(student);
+            }
+        }
+
+        private void OpenStudentWindow(Student student)
+        {
+            StudentWindow studentWindow = new StudentWindow();
+            studentWindow.Title = student.Firstname + " " + student.Surname;
+            studentWindow.Student = student;
+            studentWindow.Show();
         }
     }
 }

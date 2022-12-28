@@ -43,7 +43,8 @@
                                     <ColumnDefinition Width="*" />
                                 </Grid.ColumnDefinitions>
 
-                                <DataGrid AutoGenerateColumns="False" Grid.Column="0" x:Name="studentDataGrid" SelectionChanged="studentDataGrid_SelectionChanged" Margin="10">
+                                <DataGrid AutoGenerateColumns="False" Grid.Column="0" x:Name="studentDataGrid" MouseDoubleClick="studentDataGrid_MouseDoubleClick"
+                                          SelectionChanged="studentDataGrid_SelectionChanged" Margin="10">
                                     <DataGrid.Columns>
                                         <DataGridTextColumn Header="ID" Binding="{Binding StudentId}" />
                                         <DataGridTextColumn Header="Name" Binding="{Binding Firstname}" />

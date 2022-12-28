@@ -27,7 +27,6 @@ namespace SMS.Models
         public int Age => DateTime.Now.Year - Dob.Year;
         public Ethnicity Ethnicity { get;set; }
         public string ImageUrl { get;set; }
-
         public StudentInfo StudentInfo { get; set; }
     }
 
