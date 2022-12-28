@@ -21,6 +21,7 @@ namespace SMS.Services
                     Firstname = student.Firstname,
                     Surname = student.Surname,
                     StudentInfo = student.StudentInfo,
+                    ImageSrc = student.ImageSrc,
                     Dob = student.Dob.ToShortDateString()
                 };
 
@@ -36,9 +37,9 @@ namespace SMS.Services
 
             return new List<Student>
             {
-                new Student { Id = 1001, Firstname = "Jeremy", Surname = "Smith", Sex = Sex.Male, Dob = new DateTime(2005, 05, 14), Ethnicity = Ethnicity.Black, StudentInfo = studentInfo.FirstOrDefault(s => s.StudentId == 1001)  },
-                new Student { Id = 1002, Firstname = "Abu", Surname = "Khan", Sex = Sex.Male, Dob = new DateTime(2006, 03, 27), Ethnicity = Ethnicity.Asian, StudentInfo = studentInfo.FirstOrDefault(s => s.StudentId == 1002)},
-                new Student { Id = 1003, Firstname = "Lilly", Surname = "Graham", Sex = Sex.Female, Dob = new DateTime(2005, 01, 22), Ethnicity = Ethnicity.White, StudentInfo = studentInfo.FirstOrDefault(s => s.StudentId == 1003) }
+                new Student { Id = 1001, Firstname = "Jeremy", Surname = "Smith", Sex = Sex.Male, ImageSrc = "male.png", Dob = new DateTime(2005, 05, 14), Ethnicity = Ethnicity.Black, StudentInfo = studentInfo.FirstOrDefault(s => s.StudentId == 1001)  },
+                new Student { Id = 1002, Firstname = "Abu", Surname = "Khan", Sex = Sex.Male, ImageSrc = "male.png", Dob = new DateTime(2006, 03, 27), Ethnicity = Ethnicity.Asian, StudentInfo = studentInfo.FirstOrDefault(s => s.StudentId == 1002)},
+                new Student { Id = 1003, Firstname = "Lilly", Surname = "Graham", Sex = Sex.Female, ImageSrc = "female.png", Dob = new DateTime(2005, 01, 22), Ethnicity = Ethnicity.White, StudentInfo = studentInfo.FirstOrDefault(s => s.StudentId == 1003) }
             };
         }
 
@@ -64,6 +65,8 @@ namespace SMS.Services
         public string Firstname { get; set; }
         public string Surname { get; set; }
         public string Dob { get; set; }
+        public string ImageSrc { get; set; }
+        public Student Student { get; set; }
         public StudentInfo StudentInfo { get; set; }
     }
 }

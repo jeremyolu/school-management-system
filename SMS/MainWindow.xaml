@@ -53,7 +53,7 @@
                                         <DataGridTextColumn Header="YrGroup" Binding="{Binding StudentInfo.YearGroup}" />
                                     </DataGrid.Columns>
                                 </DataGrid>
-                                <Image Grid.Column="1" Source="Resources/login.png" />
+                                <Image x:Name="studentImage" Grid.Column="1" Source="Resources/male.png" Margin="10"/>
                             </Grid>
 
                             <StackPanel Margin="10">

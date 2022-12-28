@@ -1,11 +1,11 @@
 ﻿using SMS.Models;
 using SMS.Services;
-using System.Collections.Generic;
+using System;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
+using System.Windows.Media.Imaging;
 
 namespace SMS
 {
@@ -39,6 +39,8 @@ namespace SMS
                 TutorNameLbl.Text = $"Tutor: {selectedItem.StudentInfo.Tutor}";
                 specialNeedsLbl.Text = $"Special Needs: {IsSpecialNeeds(selectedItem.StudentInfo.IsSpecialNeeds)}";
                 studentNotesTxtBox.Text = selectedItem.StudentInfo.Notes;
+
+                studentImage.Source = SetImageSource(studentImage, @"D:\Dev\Programming\CSharp\Projects\WPF\SMS\SMS\Resources\" + selectedItem.ImageSrc);
             }
         }
 
@@ -78,6 +80,20 @@ namespace SMS
             studentWindow.Title = student.Firstname + " " + student.Surname;
             studentWindow.Student = student;
             studentWindow.Show();
+        }
+
+        public ImageSource SetImageSource(Image image, string path)
+        {
+            // Create a new BitmapImage and set its source to a file
+            BitmapImage bitmapImage = new BitmapImage();
+            bitmapImage.BeginInit();
+            bitmapImage.UriSource = new Uri(path);
+            bitmapImage.EndInit();
+
+            // Set the Image control's source to the BitmapImage
+            image.Source = bitmapImage;
+
+            return image.Source;
         }
     }
 }
