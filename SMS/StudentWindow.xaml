@@ -10,7 +10,11 @@
     <Grid>
         <Menu>
             <MenuItem Header="New">
-                <MenuItem Header="New Student"/>
+                <MenuItem Header="New Student">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/student_add_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="Edit" />
             <MenuItem Header="View" />

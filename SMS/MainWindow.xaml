@@ -6,29 +6,95 @@
         WindowStartupLocation="CenterScreen"
         mc:Ignorable="d"
         Loaded="Window_Loaded"
+        Icon="Resources/Icons/sms_icon.ico"
         Title="Dashboard SMS" Height="500" Width="800">
 
     <Grid>
         <Menu>
-            <MenuItem Header="File">
-                <MenuItem x:Name="newStudentMenu" Click="newStudentMenu_Click" Header="New Student"></MenuItem>
-            </MenuItem>
-            <MenuItem Header="Edit">
-                <MenuItem Header="Close"></MenuItem>
+            <MenuItem Header="New">
+                <MenuItem x:Name="newStudentMenu" Click="newStudentMenu_Click" Header="Student">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/student_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Teacher">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/teacher_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Parent">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/family_parent_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Class">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/book_class_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="View">
-                <MenuItem Header="Find"></MenuItem>
+                <MenuItem Header="Find">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/search_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Students">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/student_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Classes">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/book_class_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Parents">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/family_parent_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Teachers">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/teacher_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Reports">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/report_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="Help">
-                <MenuItem Header="About SMS"></MenuItem>
+                <MenuItem Header="About SMS">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/sms_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
                 <Separator />
-                <MenuItem Header="Account"></MenuItem>
-                <MenuItem Header="Help Page"></MenuItem>
-                <MenuItem Header="Report Bug"></MenuItem>
+                <MenuItem Header="Account">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/book_class_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Help Page">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/help_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Report Bug">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/bug_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="Exit">
-                <MenuItem Header="Log Out"></MenuItem>
-                <MenuItem x:Name="closeMenu" Click="closeMenu_Click" Header="Close"></MenuItem>
+                <MenuItem Header="Log Out">
+                    
+                </MenuItem>
+                <MenuItem x:Name="closeMenu" Click="closeMenu_Click" Header="Close">
+                    
+                </MenuItem>
             </MenuItem>
         </Menu>
 

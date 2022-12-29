@@ -9,6 +9,17 @@
   <ItemGroup>
     <None Remove="Resources\female.png" />
     <None Remove="Resources\Icons\add_icon.ico" />
+    <None Remove="Resources\Icons\book_class_icon.ico" />
+    <None Remove="Resources\Icons\bug_icon.ico" />
+    <None Remove="Resources\Icons\family_parent_icon.ico" />
+    <None Remove="Resources\Icons\files_icon.ico" />
+    <None Remove="Resources\Icons\help_icon.ico" />
+    <None Remove="Resources\Icons\printer_icon.ico" />
+    <None Remove="Resources\Icons\report_icon.ico" />
+    <None Remove="Resources\Icons\search_icon.ico" />
+    <None Remove="Resources\Icons\sms_icon.ico" />
+    <None Remove="Resources\Icons\student_icon.ico" />
+    <None Remove="Resources\Icons\teacher_icon.ico" />
     <None Remove="Resources\login.png" />
     <None Remove="Resources\male.png" />
   </ItemGroup>
@@ -18,6 +29,39 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Icons\add_icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\book_class_icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\bug_icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\family_parent_icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\files_icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\help_icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\printer_icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\report_icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\search_icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\sms_icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\student_icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\teacher_icon.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\login.png">
