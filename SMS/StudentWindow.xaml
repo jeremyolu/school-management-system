@@ -3,10 +3,76 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:SMS"
         mc:Ignorable="d"
-        Title="Student" Height="480" Width="450">
+        Loaded="Window_Loaded"
+        WindowStartupLocation="CenterScreen"
+        Title="Student" Height="500" Width="450">
     <Grid>
-        
+        <Menu>
+            <MenuItem Header="New">
+                <MenuItem Header="New Student"/>
+            </MenuItem>
+            <MenuItem Header="Edit" />
+            <MenuItem Header="View" />
+            <MenuItem Header="Action">
+                <MenuItem Header="Update Student">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/add_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Update Parent"/>
+                <MenuItem Header="Update Class"/>
+            </MenuItem>
+            <MenuItem Header="Exit">
+                <MenuItem x:Name="closeMenu" Click="closeMenu_Click" Header="Close"/>
+            </MenuItem>
+        </Menu>
+
+        <Border Margin="7 20 8 8">
+            <StackPanel>
+                <TabControl>
+                    <TabItem Header="Overview" Width="100">
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <StackPanel Grid.Column="0">
+                                    <TextBlock x:Name="studentLbl" Text="Student Full Name" Margin="10" FontWeight="Bold"/>
+                                    <TextBlock x:Name="dobLob" Text="DOB" Margin="10 0 10 10" FontWeight="Bold"/>
+                                    <TextBlock x:Name="sexLbl" Text="Sex" Margin="10 0 10 10" FontWeight="Bold"/>
+                                    <TextBlock x:Name="ethnicityLbl" Text="Ethnicity" Margin="10 0 10 10" FontWeight="Bold"/>
+                                    <TextBlock x:Name="yearGrpLbl" Text="YearGrp" Margin="10 0 10 10" FontWeight="Bold"/>
+                                    <TextBlock x:Name="tutorLbl" Text="Tutor" Margin="10 0 10 10" FontWeight="Bold"/>
+                                    <TextBlock x:Name="specialNeedsLbl" Text="SpecialNeeds" Margin="10 0 10 10" FontWeight="Bold"/>
+                                    <Button x:Name="updateStudentBtn" Content="Update Details" Width="120" HorizontalAlignment="Left" 
+                                            Margin="10 0 0 0"/>
+                                </StackPanel>
+
+                                <Image x:Name="studentImage" Grid.Column="1" Source="Resources/male.png" Margin="10"/>
+                            </Grid>
+
+                            <StackPanel>
+                                <Separator Margin="10 0"/>
+                                <TextBlock Text="Notes" Margin="10" FontWeight="Bold"/>
+                                <TextBox x:Name="studentNotesTxtBox" Height="70" Margin="10 0 10 10" AcceptsReturn="true" TextWrapping="Wrap"
+                                    Text="student notes..." Padding="5" BorderThickness="3" IsReadOnly="True" Background="#eee"/>
+                                <Button x:Name="updateNotesBtn" Content="Update Notes" Margin="10 0 10 10" Width="100" HorizontalAlignment="Left" />
+                            </StackPanel>
+                        </StackPanel>
+                        
+
+                    </TabItem>
+                    <TabItem Header="Classes" Width="100" />
+                    <TabItem Header="Parent Details" Width="100" />
+                    <TabItem Header="Reports" Width="100" />
+                </TabControl>
+                <StackPanel HorizontalAlignment="Center">
+                    <Label x:Name="userLbl" Content="User: UserName" />
+                </StackPanel>
+            </StackPanel>
+        </Border>
     </Grid>
 </Window>

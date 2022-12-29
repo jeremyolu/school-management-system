@@ -1,6 +1,7 @@
 ﻿using SMS.Models;
 using SMS.Services;
 using System;
+using System.Linq;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Input;
@@ -26,7 +27,11 @@ namespace SMS
         {
             studentDataGrid.ItemsSource = _studentService.GetStudentList();
             studentDataGrid.IsReadOnly = true;
-            //userLbl.Content = $"User: {TeacherData.Name + " " + TeacherData.Surname}";
+
+            if (TeacherData != null )
+            {
+                userLbl.Content = $"User: {TeacherData.Name + " " + TeacherData.Surname}";
+            }
         }
 
         private void SetData(StudentViewModel selectedItem)
@@ -70,6 +75,11 @@ namespace SMS
 
             if (student != null)
             {
+                foreach (StudentWindow window in Application.Current.Windows.OfType<StudentWindow>())
+                {
+                    window.Close();
+                }
+
                 OpenStudentWindow(student);
             }
         }
@@ -77,7 +87,7 @@ namespace SMS
         private void OpenStudentWindow(Student student)
         {
             StudentWindow studentWindow = new StudentWindow();
-            studentWindow.Title = student.Firstname + " " + student.Surname;
+            studentWindow.Title = $"{student.Firstname + " " + student.Surname + " - " + student.Id}";
             studentWindow.Student = student;
             studentWindow.Show();
         }
@@ -94,6 +104,24 @@ namespace SMS
             image.Source = bitmapImage;
 
             return image.Source;
+        }
+
+        private void newStudentMenu_Click(object sender, RoutedEventArgs e)
+        {
+            
+        }
+
+        private void closeMenu_Click(object sender, RoutedEventArgs e)
+        {
+            var result = MessageBox.Show("Are you sure you want to close SMS?", "Exit SMS", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                foreach (Window window in Application.Current.Windows)
+                {
+                    window.Close();
+                }
+            }
         }
     }
 }

@@ -6,7 +6,8 @@ namespace SMS.Models
     {
         Black,
         White,
-        Asian
+        Asian,
+        Indian
     }
 
     public enum Sex
