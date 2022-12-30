@@ -155,7 +155,16 @@
                             </StackPanel>
                         </StackPanel>
                     </TabItem>
-                    <TabItem Header="Classes" Width="100" />
+                    <TabItem Header="Classes" Width="100">
+                        <StackPanel>
+                            <DataGrid AutoGenerateColumns="False" x:Name="classDataGrid" Margin="10">
+                                <DataGrid.Columns>
+                                    <DataGridTextColumn Header="Class Code" Binding="{Binding Code}" />
+                                    <DataGridTextColumn Header="Subject" Binding="{Binding Subject}" />
+                                </DataGrid.Columns>
+                            </DataGrid>
+                        </StackPanel>
+                    </TabItem>
                     <TabItem Header="Parents" Width="100" />
                     <TabItem Header="Teachers" Width="100" />
                     <TabItem Header="Reports" Width="100" />

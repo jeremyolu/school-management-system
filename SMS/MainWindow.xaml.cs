@@ -16,17 +16,23 @@ namespace SMS
     public partial class MainWindow : Window
     {
         private StudentService _studentService = new StudentService();
+        private readonly ClassService _classService;
         public Teacher TeacherData { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
+
+            _classService = new ClassService();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
             studentDataGrid.ItemsSource = _studentService.GetStudentList();
             studentDataGrid.IsReadOnly = true;
+
+            classDataGrid.ItemsSource = _classService.GetClassesList();
+            classDataGrid.IsReadOnly = true;
 
             if (TeacherData != null )
             {
