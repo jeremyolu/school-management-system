@@ -12,23 +12,60 @@
             <MenuItem Header="New">
                 <MenuItem Header="New Student">
                     <MenuItem.Icon>
-                        <Image Source="Resources/Icons/student_add_icon.ico" />
+                        <Image Source="Resources/Icons/student_icon.ico" />
                     </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
-            <MenuItem Header="Edit" />
-            <MenuItem Header="View" />
-            <MenuItem Header="Action">
-                <MenuItem Header="Update Student">
+            <MenuItem Header="View">
+                <MenuItem Header="Overview">
                     <MenuItem.Icon>
-                        <Image Source="Resources/Icons/add_icon.ico" />
+                        <Image Source="Resources/Icons/student_icon.ico" />
                     </MenuItem.Icon>
                 </MenuItem>
-                <MenuItem Header="Update Parent"/>
-                <MenuItem Header="Update Class"/>
+                <MenuItem Header="Classes">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/book_class_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Parents">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/family_parent_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Reports">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/report_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+            </MenuItem>
+            <MenuItem Header="Action">
+                <MenuItem Header="Update Details">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/student_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Update Parent">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/family_parent_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Update Classes">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/book_class_icon.ico" />
+                    </MenuItem.Icon>
+                </MenuItem>
+                <MenuItem Header="Remove Student">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/remove_icon.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
             <MenuItem Header="Exit">
-                <MenuItem x:Name="closeMenu" Click="closeMenu_Click" Header="Close"/>
+                <MenuItem x:Name="closeMenu" Click="closeMenu_Click" Header="Close">
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/close_icon.png" />
+                    </MenuItem.Icon>
+                </MenuItem>
             </MenuItem>
         </Menu>
 

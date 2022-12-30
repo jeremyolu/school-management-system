@@ -11,10 +11,13 @@
     <None Remove="Resources\Icons\add_icon.ico" />
     <None Remove="Resources\Icons\book_class_icon.ico" />
     <None Remove="Resources\Icons\bug_icon.ico" />
+    <None Remove="Resources\Icons\close_icon.png" />
     <None Remove="Resources\Icons\family_parent_icon.ico" />
     <None Remove="Resources\Icons\files_icon.ico" />
     <None Remove="Resources\Icons\help_icon.ico" />
+    <None Remove="Resources\Icons\logout_icon.png" />
     <None Remove="Resources\Icons\printer_icon.ico" />
+    <None Remove="Resources\Icons\remove_icon.png" />
     <None Remove="Resources\Icons\report_icon.ico" />
     <None Remove="Resources\Icons\search_icon.ico" />
     <None Remove="Resources\Icons\sms_icon.ico" />
@@ -37,6 +40,9 @@
     <Resource Include="Resources\Icons\bug_icon.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Icons\close_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Icons\family_parent_icon.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
@@ -46,7 +52,13 @@
     <Resource Include="Resources\Icons\help_icon.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
+    <Resource Include="Resources\Icons\logout_icon.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
     <Resource Include="Resources\Icons\printer_icon.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Resources\Icons\remove_icon.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Resource>
     <Resource Include="Resources\Icons\report_icon.ico">

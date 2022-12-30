@@ -39,6 +39,7 @@
                         <Image Source="Resources/Icons/search_icon.ico" />
                     </MenuItem.Icon>
                 </MenuItem>
+                <Separator/>
                 <MenuItem Header="Students">
                     <MenuItem.Icon>
                         <Image Source="Resources/Icons/student_icon.ico" />
@@ -90,10 +91,14 @@
             </MenuItem>
             <MenuItem Header="Exit">
                 <MenuItem Header="Log Out">
-                    
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/logout_icon.png" />
+                    </MenuItem.Icon>
                 </MenuItem>
                 <MenuItem x:Name="closeMenu" Click="closeMenu_Click" Header="Close">
-                    
+                    <MenuItem.Icon>
+                        <Image Source="Resources/Icons/close_icon.png" />
+                    </MenuItem.Icon>
                 </MenuItem>
             </MenuItem>
         </Menu>
