@@ -157,13 +157,24 @@
                     </TabItem>
                     <TabItem Header="Classes" Width="100">
                         <StackPanel>
-                            <DataGrid AutoGenerateColumns="False" x:Name="classDataGrid" Margin="10">
-                                <DataGrid.Columns>
-                                    <DataGridTextColumn Header="Class Code" Binding="{Binding Code}" />
-                                    <DataGridTextColumn Header="Subject" Binding="{Binding Subject}" />
-                                </DataGrid.Columns>
-                            </DataGrid>
+                            <StackPanel>
+                                <DataGrid AutoGenerateColumns="False" x:Name="classDataGrid" Margin="10">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Class Code" Binding="{Binding Code}" />
+                                        <DataGridTextColumn Header="Subject" Binding="{Binding Subject}" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                                <TextBlock x:Name="totalClassLbl" Text="Total Classes: 0" Margin="10 0 10 10" FontWeight="Bold" />
+                                <Button x:Name="addNewClassBtn" Content="Add New Class" HorizontalAlignment="Left" Margin="10 0" Width="100"/>
+                            </StackPanel>
+                            <Separator Margin="10"/>
+                            <StackPanel>
+                                <TextBlock Text="Selected Class Details:" Margin="10 0 10 10" FontWeight="Bold" />
+                                <TextBlock x:Name="totalClassStudentsLbl" Text="Total Students:" Margin="10 5" FontWeight="Bold" />
+                                <TextBlock x:Name="totalClassTeachersLbl" Text="Total Teachers:" Margin="10 5" FontWeight="Bold" />
+                            </StackPanel>
                         </StackPanel>
+                        
                     </TabItem>
                     <TabItem Header="Parents" Width="100" />
                     <TabItem Header="Teachers" Width="100" />

@@ -15,14 +15,17 @@ namespace SMS
     /// </summary>
     public partial class MainWindow : Window
     {
-        private StudentService _studentService = new StudentService();
+        private readonly StudentService _studentService;
+
         private readonly ClassService _classService;
+
         public Teacher TeacherData { get; set; }
 
         public MainWindow()
         {
             InitializeComponent();
 
+            _studentService = new StudentService();
             _classService = new ClassService();
         }
 
@@ -33,6 +36,7 @@ namespace SMS
 
             classDataGrid.ItemsSource = _classService.GetClassesList();
             classDataGrid.IsReadOnly = true;
+            totalClassLbl.Text = $"Total Classes: {_classService.GetClassesList().Count}";
 
             if (TeacherData != null )
             {
