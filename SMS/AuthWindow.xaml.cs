@@ -10,11 +10,13 @@ namespace SMS
     /// </summary>
     public partial class AuthWindow : Window
     {
-        private readonly TeacherService _teacherService = new TeacherService();
+        private readonly TeacherService _teacherService;
 
         public AuthWindow()
         {
             InitializeComponent();
+
+           _teacherService = new TeacherService();
         }
 
         private void loginBtn_Click(object sender, RoutedEventArgs e)
@@ -28,9 +30,7 @@ namespace SMS
             }
             else
             {
-                var teachers = _teacherService.GetTeachers();
-
-                var teacher = teachers.FirstOrDefault(t => t.Id.Equals(Convert.ToInt32(userId)) && t.Password.Equals(password));
+                var teacher = _teacherService.GetTeachers().FirstOrDefault(t => t.TeacherInfo.Id.Equals(Convert.ToInt32(userId)) && t.TeacherInfo.Password.Equals(password));
 
                 if (teacher != null)
                 {

@@ -28,12 +28,12 @@ namespace SMS
         {
             if (Student != null)
             {
-                studentLbl.Text = Student.Firstname + " " + Student.Surname;
+                studentLbl.Text = Student.FullName;
                 dobLob.Text = $"Dob: {Student.Dob.ToShortDateString()} ({Student.Age})";
                 sexLbl.Text = $"Sex: {Student.Sex}";
                 ethnicityLbl.Text = $"Ethnicity: {Student.Ethnicity}";
                 yearGrpLbl.Text = $"Year Grp: {Student.StudentInfo.YearGroup}";
-                tutorLbl.Text = $"Tutor: {Student.StudentInfo.Tutor}";
+                tutorLbl.Text = $"Tutor: {Student.StudentInfo.Tutor.FullName}";
                 specialNeedsLbl.Text = $"Special Needs: {Student.StudentInfo.IsSpecialNeeds}";
                 studentNotesTxtBox.Text = Student.StudentInfo.Notes;
                 studentImage.Source = SetImageSource(studentImage, @"D:\Dev\Programming\CSharp\Projects\WPF\SMS\SMS\Resources\" + Student.ImageSrc);

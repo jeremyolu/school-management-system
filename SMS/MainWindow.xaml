@@ -118,10 +118,10 @@
                                 <DataGrid AutoGenerateColumns="False" Grid.Column="0" x:Name="studentDataGrid" MouseDoubleClick="studentDataGrid_MouseDoubleClick"
                                           SelectionChanged="studentDataGrid_SelectionChanged" Margin="10">
                                     <DataGrid.Columns>
-                                        <DataGridTextColumn Header="ID" Binding="{Binding StudentId}" />
+                                        <DataGridTextColumn Header="ID" Binding="{Binding Id}" />
                                         <DataGridTextColumn Header="Name" Binding="{Binding Firstname}" />
                                         <DataGridTextColumn Header="Surname" Binding="{Binding Surname}" />
-                                        <DataGridTextColumn Header="Dob" Binding="{Binding Dob}" />
+                                        <DataGridTextColumn Header="Dob" Binding="{Binding Dob, StringFormat='dd/MM/yyyy'}" />
                                         <DataGridTextColumn Header="YrGroup" Binding="{Binding StudentInfo.YearGroup}" />
                                     </DataGrid.Columns>
                                 </DataGrid>
@@ -177,7 +177,31 @@
                         
                     </TabItem>
                     <TabItem Header="Parents" Width="100" />
-                    <TabItem Header="Teachers" Width="100" />
+                    <TabItem Header="Teachers" Width="100">
+                        <StackPanel>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="3*" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+
+                                <DataGrid AutoGenerateColumns="False" Grid.Column="0" x:Name="teacherDataGrid" 
+                                           Margin="10">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                                        <DataGridTextColumn Header="Title" Binding="{Binding Title}" />
+                                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                                        <DataGridTextColumn Header="Surname" Binding="{Binding Surname}" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                                <Image x:Name="teacherImage" Grid.Column="1" Source="Resources/male.png" Margin="10"/>
+                            </Grid>
+
+                            <StackPanel Margin="10">
+                          
+                            </StackPanel>
+                        </StackPanel>
+                    </TabItem>
                     <TabItem Header="Reports" Width="100" />
                 </TabControl>
 

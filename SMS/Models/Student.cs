@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 
 namespace SMS.Models
 {
@@ -23,6 +24,7 @@ namespace SMS.Models
         public string Firstname { get; set; }
         public string MiddleName { get; set; }
         public string Surname { get; set; }
+        public string FullName => $"{Firstname} {MiddleName} {Surname}";
         public Sex Sex { get; set; }
         public DateTime Dob { get; set; }
         public int Age => DateTime.Now.Year - Dob.Year;
@@ -34,10 +36,11 @@ namespace SMS.Models
     public class StudentInfo
     {
         public int StudentId { get; set; }
-        public string YearGroup { get; set; }
-        public string Tutor { get; set; }
-        public int Age { get; set; }
+        public int YearGroup { get; set; }
         public bool IsSpecialNeeds { get; set; }
         public string Notes { get; set; }
+        public Teacher Tutor { get; set; }
+        public List<Parent> Parents { get; set; }
+        public List<Class> Classes { get; set; }
     }
 }

@@ -16,7 +16,7 @@ namespace SMS
     public partial class MainWindow : Window
     {
         private readonly StudentService _studentService;
-
+        private readonly TeacherService _teacherService;
         private readonly ClassService _classService;
 
         public Teacher TeacherData { get; set; }
@@ -26,17 +26,22 @@ namespace SMS
             InitializeComponent();
 
             _studentService = new StudentService();
+            _teacherService = new TeacherService();
             _classService = new ClassService();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
-            studentDataGrid.ItemsSource = _studentService.GetStudentList();
+            studentDataGrid.ItemsSource = _studentService.GetStudentsList();
             studentDataGrid.IsReadOnly = true;
+
+            teacherDataGrid.ItemsSource = _teacherService.GetTeachers();
+            teacherDataGrid.IsReadOnly = true;
 
             classDataGrid.ItemsSource = _classService.GetClassesList();
             classDataGrid.IsReadOnly = true;
             totalClassLbl.Text = $"Total Classes: {_classService.GetClassesList().Count}";
+
 
             if (TeacherData != null )
             {
@@ -44,14 +49,14 @@ namespace SMS
             }
         }
 
-        private void SetData(StudentViewModel selectedItem)
+        private void SetData(Student selectedItem)
         {
             if (selectedItem != null)
             {
                 fullNameLbl.Text = $"Name: {selectedItem.Firstname + " " + selectedItem.Surname}";
-                ageLbl.Text = $"Age: {selectedItem.StudentInfo.Age}";
+                ageLbl.Text = $"Age: {selectedItem.Age}";
                 yearGroupLbl.Text = $"YearGrp: {selectedItem.StudentInfo.YearGroup}";
-                TutorNameLbl.Text = $"Tutor: {selectedItem.StudentInfo.Tutor}";
+                TutorNameLbl.Text = $"Tutor: {selectedItem.StudentInfo.Tutor.FullName}";
                 specialNeedsLbl.Text = $"Special Needs: {IsSpecialNeeds(selectedItem.StudentInfo.IsSpecialNeeds)}";
                 studentNotesTxtBox.Text = selectedItem.StudentInfo.Notes;
 
@@ -61,7 +66,7 @@ namespace SMS
 
         private void studentDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            var selectedItem = (StudentViewModel)studentDataGrid.SelectedItem;
+            var selectedItem = (Student)studentDataGrid.SelectedItem;
 
             SetData(selectedItem);
         }
@@ -79,9 +84,9 @@ namespace SMS
 
         private void studentDataGrid_MouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            var selectedItem = (StudentViewModel)studentDataGrid.SelectedItem;
+            var selectedItem = (Student)studentDataGrid.SelectedItem;
 
-            var student = _studentService.GetStudent(selectedItem.StudentId);
+            var student = _studentService.GetStudent(selectedItem.Id);
 
             if (student != null)
             {

@@ -8,6 +8,7 @@
         WindowStartupLocation="CenterScreen"
         Icon="Resources/Icons/sms_icon.ico"
         Title="Student" Height="500" Width="450">
+
     <Grid>
         <Menu>
             <MenuItem Header="New">
@@ -82,7 +83,7 @@
                                 </Grid.ColumnDefinitions>
 
                                 <StackPanel Grid.Column="0">
-                                    <TextBlock x:Name="studentLbl" Text="Student Full Name" Margin="10" FontWeight="Bold"/>
+                                    <TextBlock x:Name="studentLbl" Text="Student Name" Margin="10" FontWeight="Bold"/>
                                     <TextBlock x:Name="dobLob" Text="DOB" Margin="10 0 10 10" FontWeight="Bold"/>
                                     <TextBlock x:Name="sexLbl" Text="Sex" Margin="10 0 10 10" FontWeight="Bold"/>
                                     <TextBlock x:Name="ethnicityLbl" Text="Ethnicity" Margin="10 0 10 10" FontWeight="Bold"/>
