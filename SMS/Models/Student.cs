@@ -3,21 +3,6 @@ using System.Collections.Generic;
 
 namespace SMS.Models
 {
-    public enum Ethnicity
-    {
-        Black,
-        White,
-        Asian,
-        Indian
-    }
-
-    public enum Sex
-    {
-        Male,
-        Female,
-        Other
-    }
-
     public class Student
     {
         public int Id { get; set; }
@@ -29,6 +14,7 @@ namespace SMS.Models
         public DateTime Dob { get; set; }
         public int Age => DateTime.Now.Year - Dob.Year;
         public Ethnicity Ethnicity { get;set; }
+        public string Address { get;set; }
         public string ImageSrc { get;set; }
         public StudentInfo StudentInfo { get; set; }
     }
@@ -40,7 +26,7 @@ namespace SMS.Models
         public bool IsSpecialNeeds { get; set; }
         public string Notes { get; set; }
         public Teacher Tutor { get; set; }
-        public List<Parent> Parents { get; set; }
+        public Parent Parent { get; set; }
         public List<Class> Classes { get; set; }
     }
 }

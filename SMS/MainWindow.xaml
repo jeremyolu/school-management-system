@@ -176,7 +176,54 @@
                         </StackPanel>
                         
                     </TabItem>
-                    <TabItem Header="Parents" Width="100" />
+                    <TabItem Header="Parents" Width="100">
+                        <StackPanel>
+                            <StackPanel>
+                                <DataGrid AutoGenerateColumns="False" x:Name="parentDataGrid" SelectionChanged="parentDataGrid_SelectionChanged" Margin="10">
+                                    <DataGrid.Columns>
+                                        <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+                                        <DataGridTextColumn Header="Title" Binding="{Binding Title}" />
+                                        <DataGridTextColumn Header="Name" Binding="{Binding Name}" />
+                                        <DataGridTextColumn Header="Surname" Binding="{Binding Surname}" />
+                                    </DataGrid.Columns>
+                                </DataGrid>
+                                <TextBlock x:Name="totalParentLbl" Text="Total Parents: 0" Margin="10 0 10 10" FontWeight="Bold" />
+                                <Button x:Name="addNewParentBtn" Content="Add New Parent" HorizontalAlignment="Left" Margin="10 0" Width="100"/>
+                            </StackPanel>
+                            <Separator Margin="10"/>
+                            <StackPanel>
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="*" />
+                                        <ColumnDefinition Width="2*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+
+                                    <StackPanel Grid.Column="0">
+                                        <TextBlock Text="Selected Parent Details:" Margin="10 0 10 10" FontWeight="Bold" />
+                                        <TextBlock x:Name="parentNameLbl" Text="Parent Name:" Margin="10 5" FontWeight="Bold" />
+                                        <TextBlock x:Name="parentRelationshipLbl" Text="Parent Relationship:" Margin="10 5" FontWeight="Bold" />
+                                        <TextBlock x:Name="parentAddressLbl" TextWrapping="Wrap" Text="Parent Address:" Margin="10 5" FontWeight="Bold" />
+                                        <TextBlock x:Name="parentPhoneLbl" Text="Parent Phone:" Margin="10 5" FontWeight="Bold" />
+                                        <TextBlock x:Name="parentEmailbl" TextWrapping="Wrap" Text="Parent Email:" Margin="10 5" FontWeight="Bold" />
+                                        <Button x:Name="sendParentEmailBtn" Content="Send Email" HorizontalAlignment="Left" Margin="10 5" Width="100"/>
+                                    </StackPanel>
+
+                                    <StackPanel Grid.Column="1">
+                                        <!--<TextBlock Text="Associated Student Details:" Margin="10 0 10 10" FontWeight="Bold" />
+                                        <TextBlock x:Name="assoicatedStudentNameLbl" Text="Student Name:" Margin="10 5" FontWeight="Bold" />-->
+                                        <!--<TextBlock x:Name="parentRelationshipLbl" Text="Parent Relationship:" Margin="10 5" FontWeight="Bold" />
+                                        <TextBlock x:Name="parentAddressLbl" Text="Parent Address:" Margin="10 5" FontWeight="Bold" />
+                                        <TextBlock x:Name="parentPhoneLbl" Text="Parent Phone:" Margin="10 5" FontWeight="Bold" />
+                                        <TextBlock x:Name="parentEmailbl" Text="Parent Email:" Margin="10 5" FontWeight="Bold" />
+                                        <Button x:Name="sendParentEmailBtn" Content="Send Email" HorizontalAlignment="Left" Margin="10 5" Width="100"/>-->
+                                    </StackPanel>
+                                    <Image x:Name="associatedStudentImage" Grid.Column="2" Source="Resources/male.png" Margin="10"/>
+                                </Grid>
+             
+                            </StackPanel>
+                        </StackPanel>
+                    </TabItem>
                     <TabItem Header="Teachers" Width="100">
                         <StackPanel>
                             <Grid>

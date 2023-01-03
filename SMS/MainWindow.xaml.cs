@@ -18,6 +18,7 @@ namespace SMS
         private readonly StudentService _studentService;
         private readonly TeacherService _teacherService;
         private readonly ClassService _classService;
+        private readonly ParentService _parentService;
 
         public Teacher TeacherData { get; set; }
 
@@ -28,6 +29,7 @@ namespace SMS
             _studentService = new StudentService();
             _teacherService = new TeacherService();
             _classService = new ClassService();
+            _parentService = new ParentService();
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -42,6 +44,9 @@ namespace SMS
             classDataGrid.IsReadOnly = true;
             totalClassLbl.Text = $"Total Classes: {_classService.GetClassesList().Count}";
 
+            parentDataGrid.ItemsSource = _parentService.GetParentsList();
+            parentDataGrid.IsReadOnly = true;
+            totalParentLbl.Text = $"Total Parents: {_parentService.GetParentsList().Count}";
 
             if (TeacherData != null )
             {
@@ -64,9 +69,30 @@ namespace SMS
             }
         }
 
+        private void SetData(Parent selectedItem)
+        {
+            if (selectedItem != null)
+            {
+                parentNameLbl.Text = selectedItem.FullName;
+                parentRelationshipLbl.Text = $"Relationship: {selectedItem.ParentInfo.Relationship}";
+                parentAddressLbl.Text = $"Address: {selectedItem.ParentInfo.Address}";
+                parentPhoneLbl.Text = $"Phone: {selectedItem.ParentInfo.Phone}";
+                parentEmailbl.Text = $"Email: {selectedItem.ParentInfo.Email}";
+
+                //assoicatedStudentNameLbl.Text = selectedItem.ParentInfo.Child.FullName;
+            }
+        }
+
         private void studentDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             var selectedItem = (Student)studentDataGrid.SelectedItem;
+
+            SetData(selectedItem);
+        }
+
+        private void parentDataGrid_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            var selectedItem = (Parent)parentDataGrid.SelectedItem;
 
             SetData(selectedItem);
         }

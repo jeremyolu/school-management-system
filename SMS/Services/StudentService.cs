@@ -8,10 +8,12 @@ namespace SMS.Services
     public class StudentService
     {
         private readonly TeacherService _teacherService;
+        private readonly ParentService _parentService;
 
         public StudentService()
         {
             _teacherService = new TeacherService();
+            _parentService = new ParentService();
         }
 
         public List<Student> GetStudentsList()
@@ -20,7 +22,7 @@ namespace SMS.Services
 
             return new List<Student>
             {
-                new Student { Id = 1001, Firstname = "Jeremy", MiddleName = "Alan", Surname = "Smith", Sex = Sex.Male, ImageSrc = "male.png", 
+                new Student { Id = 1001, Firstname = "Jeremy", MiddleName = "Alan", Surname = "Smith", Sex = Sex.Male, ImageSrc = "male.png",
                     Dob = new DateTime(2005, 05, 14), Ethnicity = Ethnicity.Black, StudentInfo = studentInfo.FirstOrDefault(s => s.StudentId == 1001) },
                 new Student { Id = 1002, Firstname = "Abu", MiddleName = "Abdullah", Surname = "Khan", Sex = Sex.Male, ImageSrc = "male.png", 
                     Dob = new DateTime(2006, 03, 27), Ethnicity = Ethnicity.Asian, StudentInfo = studentInfo.FirstOrDefault(s => s.StudentId == 1002) },
@@ -38,15 +40,17 @@ namespace SMS.Services
         {
             var teachers = _teacherService.GetTeachers();
 
+            var parents = _parentService.GetParentsList();
+
             return new List<StudentInfo>
             {
-                new StudentInfo { StudentId = 1001, YearGroup = 12, IsSpecialNeeds = false,
+                new StudentInfo { StudentId = 1001, YearGroup = 12, IsSpecialNeeds = false, Parent = parents.FirstOrDefault(p => p.Id == 1001),
                     Notes = "Tends to forget homework, extra caution should be taken", Tutor = teachers.FirstOrDefault(t => t.TeacherInfo.YearGrp == 12) },
 
-                new StudentInfo { StudentId = 1002, YearGroup = 12, IsSpecialNeeds = false, 
+                new StudentInfo { StudentId = 1002, YearGroup = 12, IsSpecialNeeds = false, Parent = parents.FirstOrDefault(p => p.Id == 1003),
                     Notes = "Gifted and talented student, should be achieving level 6 and higher", Tutor = teachers.FirstOrDefault(t => t.TeacherInfo.YearGrp == 12) },
 
-                new StudentInfo { StudentId = 1003, YearGroup = 13, IsSpecialNeeds = true, 
+                new StudentInfo { StudentId = 1003, YearGroup = 13, IsSpecialNeeds = true, Parent = parents.FirstOrDefault(p => p.Id == 1002),
                     Notes = "Child requires special needs with reading and writing", Tutor = teachers.FirstOrDefault(t => t.TeacherInfo.YearGrp == 13) }
             };
         }
